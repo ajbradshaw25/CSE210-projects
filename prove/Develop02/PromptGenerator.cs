@@ -8,6 +8,9 @@ public class PromptGenerator
         "What made you sad today? ",
         "What is something you learned about today? ",
         "How did you see the Lord in your life today? ",
+        "Who was the most interesting person I interacted with today? ",
+        "What was the best part of my day? ",
+        "If I had one thing I could do over today, what would it be? ",
         "What was the strongest emotion you felt today? "
     ];
 
