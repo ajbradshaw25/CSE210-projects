@@ -1,3 +1,6 @@
+/* To exceed expectations and fulfill the requirements for the assignment, I added a mood tracker to the entry class.
+This involved changing the other classes to accomodate for the new place of information that needed to be stored and retrieved. */
+
 using System;
 
 class Program

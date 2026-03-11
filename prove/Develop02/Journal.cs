@@ -41,6 +41,9 @@ public class Journal
 
             Entry newEntry = new Entry();
             newEntry._date = date;
+            newEntry._promptText = prompt;
+            newEntry._entryText = text;
+            newEntry._mood = mood;
         }
     }
 }
