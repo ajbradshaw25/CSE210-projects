@@ -26,7 +26,7 @@ public class Journal
             }
         }
     }
-    public void LoadFromFile(string file)
+    public List<Entry> LoadFromFile(string file)
     {
         _entries.Clear();
         string[] lines = System.IO.File.ReadAllLines(file);
@@ -44,6 +44,9 @@ public class Journal
             newEntry._promptText = prompt;
             newEntry._entryText = text;
             newEntry._mood = mood;
+
+            _entries.Add(newEntry);
         }
+        return _entries;
     }
 }
