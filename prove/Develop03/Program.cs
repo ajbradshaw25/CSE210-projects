@@ -1,3 +1,4 @@
+// To exceed requirements, I decided to have the program work from a library of multiple scriptures that randomizes with one loads next after you complete each one.
 using System;
 using System.IO;
 
