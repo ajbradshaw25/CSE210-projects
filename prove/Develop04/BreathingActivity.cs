@@ -1,14 +1,17 @@
-public class BreathingActivity : BaseActivity
+public class BreathingActivity : MindfulnessActivity
 {
-    public BreathingActivity(int duration) : base("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", duration) { }
+    public BreathingActivity() : base("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.") { }
 
-    protected override void ShowPrompt(int index)
+    protected override void ExecuteActivity()
     {
-        if (index % 2 == 1)
-            Console.WriteLine("Breathe in...");
-        else
-            Console.WriteLine("Breathe out...");
-        ShowAnimation();
-        Thread.Sleep(1000);
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("\nBreathe in...");
+            ShowCountdown(4);
+            Console.Write("\nBreathe out...");
+            ShowCountdown(6);
+            Console.WriteLine();
+        }
     }
 }

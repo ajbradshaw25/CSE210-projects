@@ -1,25 +1,25 @@
-public class ListingActivity : BaseActivity
-{
-    public ListingActivity(int duration) : base("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", duration) { }
+using System.Runtime.InteropServices;
 
-    protected override void ShowPrompt(int index)
+public class ListingActivity : MindfulnessActivity
+{
+    private List<string> _prompts = new List<string> { "Who are people that you appreciate?", "What are personal strengths of yours?", "Who are people that you have helped this week?", "When have you felt the Holy Ghost this month?", "Who are some of your personal heroes?" };
+    public ListingActivity() : base("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.") { }
+
+    protected override void ExecuteActivity()
     {
-        Console.WriteLine("Think of something: ");
-        ShowAnimation();
-    }
-    
-    public List<string> ListItems()
-    {
-        List<string> items = new List<string>();
-        Console.WriteLine("Enter items (one per line) and press Enter. Enter 'done' to finish.");
-        string input;
-        while (true)
+        Random rand = new Random();
+        Console.WriteLine($"\nList as many responses as you can to the following prompt:\n--- {_prompts[rand.Next(_prompts.Count)]} ---");
+        Console.Write("You may begin in: ");
+        ShowCountdown(5);
+        Console.WriteLine();
+
+        List<string> userItems = new List<string>();
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
         {
-            input = Console.ReadLine();
-            if (input.ToLower() == "done")
-                break;
-            items.Add(input);
+            Console.Write("> ");
+            userItems.Add(Console.ReadLine());
         }
-        return items;
+        Console.WriteLine($"You listed {userItems.Count} items!");
     }
 }

@@ -1,21 +1,26 @@
-public class ReflectionActivity : BaseActivity
+public class ReflectionActivity : MindfulnessActivity
 {
-    private string[] _reflectionPrompts = new string[]
-    {
-        "Think of a time when you stood up for someone else.",
-        "Think of a time when you did something really difficult.",
-        "Think of a time when you helped someone in need.",
-        "Think of a time when you did something truly selfless."
-    };
+    private List<string> _prompts = new List<string> { "Think of a time when you stood up for someone else.", "Think of a time when you did something really difficult.", "Think of a time when you helped someone in need.", "Think of a time when you did something truly selfless." };
+    private List<string> _questions = new List<string> { "Why was this experience meaningful to you?", "How did you feel when it was complete?", "Have you ever done anything like this before?", "How did you get started?", "What made this time different than other times when you were not as successful?", "What was your favorite thing about this experience?", "What could you learn from this experience that applies to other situations?", "What did you learn about yourself through this experience?", "How can you keep this experience in mind in the future?" };
 
-    public ReflectionActivity(int duration) : base("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", duration) { }
+    public ReflectionActivity() : base("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.") { }
 
-    protected override void ShowPrompt(int index)
+    protected override void ExecuteActivity()
     {
-        Random random = new Random();
-        int randomIndex = random.Next(_reflectionPrompts.Length);
-        Console.WriteLine(_reflectionPrompts[randomIndex]);
-        ShowAnimation();
-        Thread.Sleep(1000);
+        Random rand = new Random();
+        Console.WriteLine($"\nConsider the following prompt:\n---{_prompts[rand.Next(_prompts.Count)]} ---");
+        Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
+        Console.ReadLine();
+
+        Console.WriteLine("\nNow ponder on each of the following questions as they related to the experience.");
+        Console.ReadLine();
+
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+            Console.Write($"> {_questions[rand.Next(_questions.Count)]} ");
+            ShowSpinner(5);
+            Console.WriteLine();
+        }
     }
 }
