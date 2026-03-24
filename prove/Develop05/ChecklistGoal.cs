@@ -1,12 +1,10 @@
-using System.Runtime;
-
 public class ChecklistGoal : Goal
 {
     private int _amountCompleted;
     private int _target;
     private int _bonus;
 
-    public ChecklistGoal(string name, string description, int points) : base(name, description, points)
+    public ChecklistGoal(string name, string description, int points, int target, int bonus, int completed = 0) : base(name, description, points)
     {
         _target = target;
         _bonus = bonus;
