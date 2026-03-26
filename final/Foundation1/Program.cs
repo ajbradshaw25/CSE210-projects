@@ -8,24 +8,24 @@ class Program
         List<Video> videos = new List<Video>();
 
         // Video 1
-        Video video1 = new Video("How to Bake Bread", "Chef Jane", 600);
-        video1.AddComment(new Comment("User123", "This was so helpful!"));
-        video1.AddComment(new Comment("BakerBoy", "Mine didn't rise, any tips?"));
-        video1.AddComment(new Comment("Foodie", "Best sourdough tutorial ever."));
+        Video video1 = new Video("How to paint a galaxy", "Art Inspirations", 1800);
+        video1.AddComment(new Comment("User123", "This was so beautiful!"));
+        video1.AddComment(new Comment("BakerBoy", "So Inspiring!"));
+        video1.AddComment(new Comment("ArtSplash", "Best painting tutorial ever."));
         videos.Add(video1);
 
         // Video 2
-        Video video2 = new Video("C# Tutorial for Beginners", "Code With Me", 1200);
-        video2.AddComment(new Comment("DevGal", "Finally understand classes!"));
-        video2.AddComment(new Comment("StudentA", "Can you do a video on Inheritance?"));
-        video2.AddComment(new Comment("BugHunter", "Great explanation of polymorphism."));
+        Video video2 = new Video("How to stargaze and find well known constellations", "Stargazer", 1200);
+        video2.AddComment(new Comment("Astro462", "I finally understand stargazing!"));
+        video2.AddComment(new Comment("user127", "Can you do a video on how to find some of the planets in the night sky?"));
+        video2.AddComment(new Comment("Cometchaser", "Great explanation on stargazing."));
         videos.Add(video2);
 
         // Video 3
-        Video video3 = new Video("Top 10 Travel Destinations 2024", "Wanderlust", 900);
-        video3.AddComment(new Comment("Traveler99", "I need to go to Japan now."));
-        video3.AddComment(new Comment("GlobeTrotter", "Switzerland is way too expensive."));
-        video3.AddComment(new Comment("VacayMode", "Adding these to my bucket list!"));
+        Video video3 = new Video("How to bake Butterscotch Cake", "Chloe Bakes", 900);
+        video3.AddComment(new Comment("Bakergal", "This was so helpful!"));
+        video3.AddComment(new Comment("user235", "Mine turned out uneven, any tips on how to fix that?"));
+        video3.AddComment(new Comment("Recipes73", "Adding these to my recipe list!"));
         videos.Add(video3);
 
         // Displaying the data
