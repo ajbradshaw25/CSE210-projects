@@ -8,23 +8,48 @@ public class GoalManager
 
     public void Start()
     {
-        string choice = "";
-        while (choice != "6")
+        int userChoice = -1;
+
+        Console.WriteLine("Welcome to the Goal Program!");
+
+        while (userChoice != 6)
         {
             Console.WriteLine($"\nYou have {_score} points.");
-            Console.WriteLine("\nMenu Options:\n 1. Create New Goal\n 2. List Goals\n 3. Save Goals\n 4. Load Goals\n 5. Record Event\n 6. Quit");
-            Console.Write("Please select an option from the menu: ");
-            choice = Console.ReadLine(); 
+            Console.WriteLine("\nPlease select an option from the menu:");
+            Console.WriteLine("1. Create New Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Save Goals");
+            Console.WriteLine("4. Load Goals");
+            Console.WriteLine("5. Record Event");
+            Console.WriteLine("6. Quit");
+            Console.Write("What would you like to do? ");
+            
+            userChoice = int.Parse(Console.ReadLine()); 
 
-            switch (choice)
-                {
-                    case "1": CreateGoal(); break;
-                    case "2": ListGoalDetails(); break;
-                    case "3": SaveGoals(); break;
-                    case "4": LoadGoals(); break;
-                    case "5": RecordEvent(); break;
-                    case "6": Console.WriteLine("Goodbye!"); break;
-                }
+            if (userChoice == 1)
+            {
+                CreateGoal();
+            }
+            else if (userChoice == 2)
+            {
+                ListGoalDetails();
+            }
+            else if (userChoice == 3)
+            {
+                SaveGoals();
+            }
+            else if (userChoice == 4)
+            {
+                LoadGoals();
+            }
+            else if (userChoice == 5)
+            {
+                RecordEvent();
+            }
+            else
+            {
+                Console.WriteLine("Goodbye!");    
+            }
         }
     }
 
