@@ -1,12 +1,16 @@
 using System;
+using System.Diagnostics;
+using System.Linq.Expressions;
 
 class Program
 {
     static void Main(string[] args)
     {
-        while (true)
+        int userChoice = -1;
+        Console.WriteLine("Welcome to  the Mindfulness Program!");
+
+        while (userChoice != 4)
         {
-            Console.Clear();
             Console.WriteLine("Welcome to the Mindfulness Program!");
             Console.WriteLine("\nMenu Options:");
             Console.WriteLine("1. Breathing Activity");
@@ -14,19 +18,25 @@ class Program
             Console.WriteLine("3. Listing Activity");
             Console.WriteLine("4. Quit");
             Console.Write("Please select an option from the menu: ");
-            string choice = Console.ReadLine();
+            
+            userChoice = int.Parse(Console.ReadLine());
 
-            MindfulnessActivity activity = choice switch
+            if (userChoice == 1)
             {
-                "1" => new BreathingActivity(),
-                "2" => new ReflectionActivity(),
-                "3" => new ListingActivity(),
-                "4" => null,
-                _ => null
-            };
-
-            if (choice == "4") break;
-            activity?.Run();
+                new BreathingActivity();
+            }
+            else if (userChoice == 2)
+            {
+                new ReflectionActivity();
+            }
+            else if (userChoice == 3)
+            {
+                new ListingActivity();
+            }
+            else
+            {
+                Console.WriteLine("Goodbye!");
+            }
         }
     }
 }

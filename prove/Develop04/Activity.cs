@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 
 // Base Class to contain shared attributes and behaviors
-public abstract class MindfulnessActivity
+public abstract class Activity
 {
     private string _name;
     private string _description;
     protected int _duration;
 
-    public MindfulnessActivity(string name, string description)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;

@@ -29,7 +29,7 @@ class Program
                     Console.Write("Press Enter to hide a word or type 'quit' to exit: ");
                     string input = Console.ReadLine();
 
-                    if (input.ToLower() == "quit")
+                    if (input.Equals("quit", StringComparison.CurrentCultureIgnoreCase))
                         return;
 
                     scripture.HideRandom();
