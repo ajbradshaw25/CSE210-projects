@@ -20,23 +20,31 @@ class Program
             Console.Write("Please select an option from the menu: ");
             
             userChoice = int.Parse(Console.ReadLine());
+            Activity activity = null;
+
 
             if (userChoice == 1)
             {
-                new BreathingActivity();
+                activity = new BreathingActivity();
             }
             else if (userChoice == 2)
             {
-                new ReflectionActivity();
+                activity = new ReflectionActivity();
             }
             else if (userChoice == 3)
             {
-                new ListingActivity();
+                activity = new ListingActivity();
             }
-            else
+            else if (userChoice == 4)
             {
                 Console.WriteLine("Goodbye!");
             }
+            else
+            {
+                Console.WriteLine("Invalid choice. Please try again.");
+            }
+
+            activity?.Run();
         }
     }
 }
