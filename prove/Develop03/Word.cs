@@ -1,11 +1,11 @@
 public class Word
 {
-    public string Text { get; }
-    public bool IsHidden { get; private set; }
+    public string _text;
+    public bool IsHidden;
 
     public Word(string text)
     {
-        Text = text;
+        _text = text;
         IsHidden = false;
     }
 
@@ -21,6 +21,6 @@ public class Word
 
     public override string ToString()
     {
-        return IsHidden ? new string('_', Text.Length) : Text;
+        return IsHidden ? new string('_', _text.Length) : _text;
     }
 }
