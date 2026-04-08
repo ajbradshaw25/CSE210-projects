@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Scripture
 {
     private List<Word> _words;
-    public Reference Reference { get; }
+    public Reference Reference;
 
     private int currentWordIndex = 0;
 
